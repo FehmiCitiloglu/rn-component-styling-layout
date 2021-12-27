@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from "react-native"
 import colors from '../constants/colors';
+import TitleText from './TitleText';
 
 interface Props {
     title: string
@@ -9,7 +10,7 @@ interface Props {
 const Header = (props: Props) => { 
     return(
         <View style={styles.header}>
-            <Text style={styles.headerTitle}>{props.title}</Text>
+            <TitleText>{props.title}</TitleText>
         </View>
     )
  }
@@ -24,11 +25,7 @@ const Header = (props: Props) => {
         alignItems: 'center',
         justifyContent: 'center'
     },
-    headerTitle: {
-        color: 'black',
-        fontSize: 18,
-        
-    }
+
   })
 
   export default Header
