@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+  Platform,
+} from "react-native";
 import colors from "../constants/colors";
 
 interface Props {
@@ -8,6 +15,13 @@ interface Props {
 }
 
 const MainButton = (props: Props) => {
+  let ButtonComponent: TouchableNativeFeedback | TouchableOpacity =
+    TouchableOpacity;
+
+  if (Platform.OS === "android" && Platform.Version >= 21) {
+    ButtonComponent = TouchableNativeFeedback;
+  }
+
   return (
     <TouchableOpacity activeOpacity={0.6} {...props} onPress={props.onPress}>
       <View style={styles.button}>
