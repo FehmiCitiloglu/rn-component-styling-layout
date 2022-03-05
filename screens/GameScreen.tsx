@@ -11,7 +11,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 
 import Card from "../components/Card";
-import MainButton from "../components/MainButton";
+import MainButton from "../components/MainButton.android.";
 import NumberContainer from "../components/NumberContainer";
 import defaultStyles from "../constants/default-styles";
 import BodyText from "../components/BodyText";
